@@ -1,0 +1,194 @@
+body,
+html {
+	height: 100%;
+	padding-top: 25px;
+	width: 100%; 
+	margin: 0; 
+}
+
+/*.row {
+	border: 1px solid;
+  }
+
+  .row + .row {
+	border-top:0 ;
+}
+
+.colborder {
+	border: 1px solid;
+}*/
+
+.row.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+  }
+
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#map {
+	width: 580px;
+	height: 680px;
+	float: left;
+	z-index: 1;
+}
+
+#rightside {
+	width: 80%;
+	height: 100%;
+	position: fixed;
+	/*position: absolute;*/
+	background-color: snow;
+	left: 600px;
+	/*float: right;*/
+	overflow: auto;
+}
+
+/*#barchart {
+	width: 400px;
+	height: 500px;
+	/*position: fixed;
+	float: right;
+}
+*/
+/*#innerright {
+	width: 400px;
+	height: 500px;
+}*/
+
+/*#list {
+	float: left;
+	/*width: 25%;
+	position: fixed;
+	left: 70%;
+	overflow: scroll;
+}*/
+
+
+
+/*.axis {
+	font-size: 13px;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	display: none;
+}*/
+
+/*for y axis labels*/
+text {
+	font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+/*text.value {
+	font-size: 120%;
+	fill: black;
+}*/
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+
+/*for list*/
+table {
+	margin-left: 2px;
+	margin-bottom: 10px;
+	border-collapse: collapse;
+	width: 505px;
+	table-layout: fixed;
+	/*height:60px;*/
+    /*overflow-y: auto;*/
+}
+
+thead
+{
+	width: 510px;
+	display: block;
+	
+}
+
+tbody
+{
+	display: block;
+	width: 510px;
+	height: 155px;
+	overflow-y: auto;
+}
+
+th {
+	
+	min-width: 100px;
+    padding: 6px;
+	border: 1px solid #ddd;
+    text-align: center;
+	background-color: rgb(86, 11, 109);
+    color: snow;
+	font-family: "Trebuchet MS";
+}
+
+td {
+
+	min-width: 100px;
+    padding: 4px;
+	border: 1px solid #ddd;
+	font-family: "Trebuchet MS";
+	color:  rgb(24, 2, 31);
+}
+
+tr:nth-child(even) {
+	background-color: rgb(197, 158, 209);
+}
+tr:hover {
+	background-color: rgb(145, 131, 150);
+}
+
+/*for scatterplot*/
+.axis,
+.frame {
+  shape-rendering: crispEdges;
+}
+
+.axis line {
+  stroke: #ddd;
+}
+
+.axis path {
+  display: none;
+}
+
+.cell text {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.frame {
+  fill: none;
+  stroke: #aaa;
+}
+
+circle {
+  fill-opacity: .7;
+}
+
+.tooltip {
+	position: absolute;
+	text-align: left;
+    width: 140px;
+	height: 75px;
+	padding: 3px;
+	font-size: 12px sans-serif;
+	color: snow;
+	pointer-events: none;
+	background-color:#325f89;
+	border: 0px;
+    border-radius: 8px;
+}

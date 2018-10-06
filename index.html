@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Information Visualization Project - Spring 2018</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Leaflet Map Style -->
+	<link href="css/leaflet.css" rel="stylesheet" />
+	<link href="css/leaflet.draw.css" rel="stylesheet" />
+	<!--keen io dashboard-->
+	<link href="css/keen-dashboards.css" rel="stylesheet" />
+
+	<!-- Your Style -->
+	<link href="css/MyCSS.css" rel="stylesheet">
+	<!-- Leaflet Map api -->
+	<script src="js/leaflet-src.js"></script>
+	<script src="js/Leaflet.draw.js"></script>
+	<script src="js/leaflet-heat.js"></script>
+	<script src="js/edit/handler/Edit.Poly.js"></script>
+	<script src="js/edit/handler/Edit.SimpleShape.js"></script>
+	<script src="js/edit/handler/Edit.Circle.js"></script>
+	<script src="js/edit/handler/Edit.Rectangle.js"></script>
+
+	<script src="js/draw/handler/Draw.Feature.js"></script>
+	<script src="js/draw/handler/Draw.Polyline.js"></script>
+	<script src="js/draw/handler/Draw.Polygon.js"></script>
+	<script src="js/draw/handler/Draw.SimpleShape.js"></script>
+	<script src="js/draw/handler/Draw.Rectangle.js"></script>
+	<script src="js/draw/handler/Draw.Circle.js"></script>
+	<script src="js/draw/handler/Draw.Marker.js"></script>
+
+	<script src="js/ext/LatLngUtil.js"></script>
+	<script src="js/ext/GeometryUtil.js"></script>
+	<script src="js/ext/LineUtil.Intersect.js"></script>
+	<script src="js/ext/Polyline.Intersect.js"></script>
+	<script src="js/ext/Polygon.Intersect.js"></script>
+
+	<script src="js/Control.Draw.js"></script>
+	<script src="js/Tooltip.js"></script>
+	<script src="js/Toolbar.js"></script>
+
+	<script src="js/draw/DrawToolbar.js"></script>
+	<script src="js/edit/EditToolbar.js"></script>
+	<script src="js/edit/handler/EditToolbar.Edit.js"></script>
+	<script src="js/edit/handler/EditToolbar.Delete.js"></script>
+	<script src="js/communist.js"></script>
+	<script src="js/TArr.js"></script>
+
+	<!--keen io-->
+	<script src="js/keen.min.js"></script>
+
+	<!-- D3 api -->
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://d3js.org/d3-color.v1.min.js"></script>
+	<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+</head>
+
+<body>
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<font size="4" color="white">
+						<b>Information Visualization Project - Spring 2018</b>
+					</font>
+				</a>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+	<!--dashboard-->
+	<div class="container-fluid">
+		<div class="row no-gutters">
+			<div class="col-4">
+				<!-- Map -->
+				<!--<div class="col-sm-12">-->
+				<div id="map"></div>
+				<!--</div>-->
+				<!-- Map -->
+			</div>
+			<div class="col-8" id="rightside">
+				<div class="row no-gutters">
+					<!-- Text Box -->
+					<div class="col-sm-3">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<h1 class="h4">Trip Count</h1>
+							</div>
+							<div class="chart-stage">
+								<div id="textbox">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Text Box -->
+					<!-- List -->
+					<div class="col-sm-9">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<h1 class="h4">Trip Details</h1>
+							</div>
+							<div class="chart-stage">
+								<div id="list">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- List -->
+				</div>
+				<div class="row no-gutters">
+					<!-- BarChart -->
+					<div class="col-sm-4">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<h1 class="h4">No. of Trips per half hour</h1>
+							</div>
+							<div class="chart-stage">
+								<div id="barchart">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- BarChart -->
+					<!-- DonutChart -->
+					<div class="col-sm-7">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<h1 class="h4">Top Streets</h1>
+							</div>
+							<div class="chart-stage">
+								<div id="donutchart"></div>
+							</div>
+						</div>
+					</div>
+					<!-- DonutChart -->
+				</div>
+				<div class="row no-gutters">
+					<!-- List -->
+					<div class="col-sm-12">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<h1 class="h4">Avg Speed vs Distance vs Duration</h1>
+							</div>
+							<div class="chart-stage">
+								<div id="scatterplot">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- List -->
+				</div>
+				<div class="row no-gutters">
+					<div class="col-sm-12">
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Your js File -->
+	<script src="js/Myjs.js"></script>
+</body>
+
+</html>
